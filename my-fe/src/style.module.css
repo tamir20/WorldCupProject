@@ -1,0 +1,90 @@
+.match{
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    margin-top: 10px;
+}
+.groupTitle{
+    /* border: 1px solid rgba(0, 0, 0, 0.05); */
+    text-align: center;
+}
+.informationHub{
+    /* border: 1px solid rgba(0, 0, 0, 0.05); */
+    overflow: hidden;
+    width: 240px;
+    margin: auto;
+}
+.countryHub{
+    /* border: 1px solid rgba(0, 0, 0, 0.05); */
+    width: 50px;
+    height: 60px;
+    margin: auto;
+    float:left;
+    
+}
+.countryImage{
+    height: 20px;
+    width: 25px;
+    margin-top: 0px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.countryImageHolder{
+    /* border: 1px solid rgba(0, 0, 0, 0.05); */
+
+}
+.countryTextHolder{
+    /* border: 1px solid rgba(0, 0, 0, 0.05); */
+    text-align: center;
+}
+.countryText{
+    font-size: 10px;
+}
+.closedBetDiv{
+    /* border: 1px solid rgba(0, 0, 0, 0.05); */
+    width: 20px;
+    overflow: hidden;
+    height: 60px;
+    float:left;
+
+}
+.closedBetText{
+    color: darkred;
+    font-size: 13px;
+    text-align: center;
+}
+.finalScoreDiv{
+    /* border: 1px solid rgba(0, 0, 0, 0.05); */
+    width: 20px;
+    overflow: hidden;
+    height: 60px;
+    float:left;
+
+}
+.finalScoreText{
+    font-size: 16px;
+    text-align: center;
+}
+.PointsHub{
+    /* border: 1px solid rgba(0, 0, 0, 0.05); */
+    width: 50px;
+    height: 60px;
+    margin: auto;
+    float:left;
+}
+.PointsHubTextDiv{
+    /* border: 1px solid rgba(0, 0, 0, 0.05); */
+    height: 25px;
+}
+.PointsHubLabelDiv{
+    /* border: 1px solid rgba(0, 0, 0, 0.05); */
+}
+.PointsHubLabel{
+    font-size: 10px;
+    text-align: center;
+}
+.PointsHubText{
+    text-align: center;
+}
