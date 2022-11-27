@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "6383b27c052def533a7f9a05"
+  },
+  "countryImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Flag_of_Israel.svg/800px-Flag_of_Israel.svg.png",
+  "countryLabel": "Israel"
+},{
+  "_id": {
+    "$oid": "6383b27c052def533a7f9a06"
+  },
+  "countryImage": "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/125px-Flag_of_Brazil.svg.png",
+  "countryLabel": "Brazil"
+},{
+  "_id": {
+    "$oid": "6383b27c052def533a7f9a07"
+  },
+  "countryImage": "https://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/125px-Flag_of_England.svg.png",
+  "countryLabel": "England"
+},{
+  "_id": {
+    "$oid": "6383b27c052def533a7f9a08"
+  },
+  "countryImage": "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/125px-Flag_of_Germany.svg.png",
+  "countryLabel": "Germany"
+},{
+  "_id": {
+    "$oid": "6383b27c052def533a7f9a09"
+  },
+  "countryImage": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/125px-Flag_of_Japan.svg.png",
+  "countryLabel": "Japan"
+},{
+  "_id": {
+    "$oid": "6383b27c052def533a7f9a0a"
+  },
+  "countryImage": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/125px-Flag_of_the_United_States.svg.png",
+  "countryLabel": "USA"
+}]

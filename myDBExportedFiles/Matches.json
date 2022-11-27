@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "6383b253052def533a7f99ff"
+  },
+  "matchID": 1,
+  "groupTitle": "Group A",
+  "countryALabel": "Israel",
+  "countryBLabel": "Brazil",
+  "countryAScore": 2,
+  "countryBScore": 1
+},{
+  "_id": {
+    "$oid": "6383b253052def533a7f9a00"
+  },
+  "matchID": 2,
+  "groupTitle": "Group B",
+  "countryALabel": "England",
+  "countryBLabel": "Germany",
+  "countryAScore": 2,
+  "countryBScore": 2
+},{
+  "_id": {
+    "$oid": "6383b253052def533a7f9a01"
+  },
+  "matchID": 3,
+  "groupTitle": "Group A",
+  "countryALabel": "Japan",
+  "countryBLabel": "USA",
+  "countryAScore": 4,
+  "countryBScore": 2
+}]

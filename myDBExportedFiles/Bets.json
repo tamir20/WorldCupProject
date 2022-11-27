@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "6383b28e052def533a7f9a0d"
+  },
+  "matchID": 1,
+  "countryABet": 1,
+  "countryBet": 0
+},{
+  "_id": {
+    "$oid": "6383b28e052def533a7f9a0e"
+  },
+  "matchID": 2,
+  "countryABet": 3,
+  "countryBet": 3
+},{
+  "_id": {
+    "$oid": "6383b28e052def533a7f9a0f"
+  },
+  "matchID": 3,
+  "countryABet": 4,
+  "countryBet": 2
+}]
