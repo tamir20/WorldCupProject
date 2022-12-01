@@ -9,19 +9,19 @@ function App() {
   const [matches, setMatches] = useState([])
 
   const fetchMatches = () => {
-    // // get my matches from my debugDB
-    // setMatches(matchesDB);
+    // get my matches from my debugDB
+    setMatches(matchesDB);
     
-    // fetch information from my be server
-    fetch('http://localhost:5000')
-      .then((response) => response.json())
-      .then((jsonGroups) => {
-        // console.log(jsonGroups);
-        setMatches(jsonGroups);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
+    // // fetch information from my be server
+    // fetch('http://localhost:5000')
+    //   .then((response) => response.json())
+    //   .then((jsonGroups) => {
+    //     // console.log(jsonGroups);
+    //     setMatches(jsonGroups);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err.message);
+    //   });
   };
 
   useEffect(() => {

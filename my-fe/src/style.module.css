@@ -1,9 +1,11 @@
-.match{
+.display{
     border: 1px solid rgba(0, 0, 0, 0.05);
     margin: auto;
-    width: 50%;
-    padding: 10px;
-    margin-top: 10px;
+    width: 250px;
+    height: 90px;
+    float:left;
+    /* padding: 10px; */
+    /* margin-top: 10px; */
 }
 .groupTitle{
     /* border: 1px solid rgba(0, 0, 0, 0.05); */
@@ -25,7 +27,7 @@
 }
 .countryImage{
     height: 20px;
-    width: 25px;
+    width: 30px;
     margin-top: 0px;
     display: block;
     margin-left: auto;
@@ -84,7 +86,121 @@
 .PointsHubLabel{
     font-size: 10px;
     text-align: center;
+    margin-top: 10px;
 }
 .PointsHubText{
     text-align: center;
 }
+.LeftPanel{
+    /* border: 1px solid rgba(0, 0, 0, 0.05); */
+    /* margin: auto; */
+    width: 60px;
+    /* padding: 10px; */
+    /* margin-top: 10px; */
+    float:left;
+    text-align: center;
+    height: 90px;
+}
+.RightPanel{
+    /* border: 1px solid rgba(0, 0, 0, 0.05); */
+    /* margin: auto; */
+    width: 60px;
+    /* padding: 10px; */
+    /* margin-top: 10px; */
+    float:left;
+    text-align: center;
+    height: 90px;
+}
+.match{
+    /* border: 1px solid rgba(0, 0, 0, 0.05); */
+    margin: auto;
+    width: 373px;
+    height: 90px;
+    /* padding: 10px; */
+    margin-top: 10px;
+}
+.ButtonChangeBet{
+    background-color: initial;
+    background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+
+}
+
+/* <!-- HTML !--> */
+/* <button class="button-42" role="button">Button 42</button> */
+
+/* CSS */
+.button42 {
+    background-color: initial;
+    background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+    height: 12px;
+    line-height: 10px;
+    outline: 0;
+    overflow: hidden;
+    /* padding: 0 10px; */
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 25px;
+    z-index: 9;
+    border: 0;
+    transition: box-shadow .2s;
+    font-size: 9px;
+    top: 30%;
+  }
+  
+  .button42:hover {
+    box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+  }
+  /* CSS */
+.buttonEdit {
+    background-color: initial;
+    background-image: linear-gradient(-180deg, #26c328, #2e9a04);
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+    height: 12px;
+    line-height: 10px;
+    outline: 0;
+    overflow: hidden;
+    /* padding: 0 10px; */
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 25px;
+    z-index: 9;
+    border: 0;
+    transition: box-shadow .2s;
+    font-size: 9px;
+    top: 30%;
+  }
+  
+  .buttonEdit:hover {
+    box-shadow: rgba(30, 253, 0, 0.5) 0 3px 8px;
+  }
+
+  .numberInput{
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    font-size: 10px;
+    width: 20px;
+    text-align: center; 
+    vertical-align: top;
+  }
