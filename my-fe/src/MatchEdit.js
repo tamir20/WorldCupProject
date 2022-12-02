@@ -1,7 +1,6 @@
 
 import style from "./style.module.css";
 import * as React from 'react';
-import LeftPanel from './LeftPanel'
 import RightPanel from './RightPanel'
 
 function defaultScore(score){
@@ -14,13 +13,24 @@ function defaultScore(score){
     return score
 }
 
-function MatchEdit({match}) {
+function handleClick(setMatches, matches, matchID){
+    let newMatches = matches.map(item => 
+        {
+          if (item.matchID === matchID){
+            return {...item, editMode: !item.editMode}; //gets everything that was already in item, and updates "done"
+          }
+          return item; // else return unmodified item 
+        });
+    setMatches(newMatches);
+}
+
+function MatchEdit({match, setMatches, matches}) {
     return (
         <>
             <div className={style.match}>
             <div className={style.LeftPanel}>
                 {/* <button className={style.button42}>X</button> */}
-                <button className={style.buttonEdit}>OK</button>
+                <button className={style.buttonEdit} onClick={() => {handleClick(setMatches, matches, match.matchID)}}>OK</button>
             </div>
                 <div className={style.display}>
                     {/* {match.name} */}
@@ -38,7 +48,7 @@ function MatchEdit({match}) {
                             </div>
                         </div>
                         <div className={style.closedBetDiv}>
-                            <input className={style.numberInput}/>
+                            <input className={style.numberInput} defaultValue={defaultScore(match.countryABet)}/>
                         </div>
                         <div className={style.finalScoreDiv}>
                             <p className={style.finalScoreText}>{defaultScore(match.countryAScore)}</p>
@@ -55,7 +65,7 @@ function MatchEdit({match}) {
                             <p className={style.finalScoreText}>{defaultScore(match.countryBScore)}</p>
                         </div>
                         <div className={style.closedBetDiv}>
-                            <input className={style.numberInput}/>
+                            <input className={style.numberInput} defaultValue={defaultScore(match.countryBet)}/>
                         </div>
                         <div className={style.countryHub}>
                             <div className={style.countryImageHolder}>

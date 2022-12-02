@@ -14,11 +14,11 @@ function defaultScore(score){
     return score
 }
 
-function MatchDisplay({match}) {
+function MatchDisplay({match, setMatches, matches}) {
     return (
         <>
             <div className={style.match}>
-                <LeftPanel match={match} />
+                <LeftPanel match={match} setMatches={setMatches} matches={matches}/>
                 <div className={style.display}>
                     {/* {match.name} */}
                     {/* {match.points} */}

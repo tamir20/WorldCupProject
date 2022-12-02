@@ -31,7 +31,7 @@ function App() {
   return (
     <>
     <MyNavBar />
-    <Matches matches = { matches } />
+    <Matches matches = { matches } setMatches = {setMatches}/>
     </>
   );
 
