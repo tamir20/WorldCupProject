@@ -4,14 +4,29 @@ from myTempDB import *
 from flask_cors import CORS
 from pymongo import MongoClient
 from bson import json_util
+from flask import request
+
 
 app = Flask(__name__)
 CORS(app)
 
 @app.route("/")
-def hello_world():
+def get_matches():
     # return json.dumps(dictionary)
    return get_myMatchesBets()
+
+@app.route("/updateBet", methods=['POST'])
+def update_Bet():
+    return updateBet()
+
+def updateBet():
+    data = request.get_json()
+    # mybet = myFind(collection="Bets", query={"matchID": data["matchID"]})[0]
+    # mybet["countryABet"] = data["countryABet"]
+    # mybet["countryBet"] = data["countryBet"]
+    # myquery = { "address": "Valley 345" }
+    # newvalues = { "$set": { "address": "Canyon 123" } }
+    return myUpdate("Bets" ,query={ "matchID": data["matchID"] },newValue={ "$set": { "countryABet": data["countryABet"], "countryBet": data["countryBet"]}})
 
 def get_collection(collectionName):
    # Provide the mongodb atlas url to connect python to mongodb using pymongo
@@ -29,6 +44,13 @@ def myFind(collection,query):
     list_cur = list(cursor)
     json_data = json.loads(json_util.dumps(list_cur, indent = 2) )
     return(json_data)
+
+def myUpdate(collection,query,newValue):
+    mycol = get_collection(collection)
+    # myquery = { "address": "Valley 345" }
+    # newvalues = { "$set": { "address": "Canyon 123" } }
+    mycol.update_one(query, newValue)
+    return myFind(collection,query)
 
 def get_myMatchesBets():
     matches = myFind(collection="Matches", query="")

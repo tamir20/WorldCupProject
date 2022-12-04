@@ -24,6 +24,28 @@ function handleClick(setMatches, matches, matchID){
     setMatches(newMatches);
 }
 
+function handleUpdateCountryA(e, setMatches, matches, matchID){
+    let newMatches = matches.map(item => 
+        {
+          if (item.matchID === matchID){
+            return {...item, countryABet: e.target.value}; //gets everything that was already in item, and updates "done"
+          }
+          return item; // else return unmodified item 
+        });
+    setMatches(newMatches);
+}
+
+function handleUpdateCountryB(e, setMatches, matches, matchID){
+    let newMatches = matches.map(item => 
+        {
+          if (item.matchID === matchID){
+            return {...item, countryBet: e.target.value}; //gets everything that was already in item, and updates "done"
+          }
+          return item; // else return unmodified item 
+        });
+    setMatches(newMatches);
+}
+
 function MatchEdit({match, setMatches, matches}) {
     return (
         <>
@@ -48,7 +70,7 @@ function MatchEdit({match, setMatches, matches}) {
                             </div>
                         </div>
                         <div className={style.closedBetDiv}>
-                            <input className={style.numberInput} defaultValue={defaultScore(match.countryABet)}/>
+                            <input className={style.numberInput} defaultValue={defaultScore(match.countryABet)} onChange={(e) => {handleUpdateCountryA(e, setMatches, matches, match.matchID)}}/>
                         </div>
                         <div className={style.finalScoreDiv}>
                             <p className={style.finalScoreText}>{defaultScore(match.countryAScore)}</p>
@@ -65,7 +87,7 @@ function MatchEdit({match, setMatches, matches}) {
                             <p className={style.finalScoreText}>{defaultScore(match.countryBScore)}</p>
                         </div>
                         <div className={style.closedBetDiv}>
-                            <input className={style.numberInput} defaultValue={defaultScore(match.countryBet)}/>
+                        <input className={style.numberInput} defaultValue={defaultScore(match.countryBet)} onChange={(e) => {handleUpdateCountryB(e, setMatches, matches, match.matchID)}}/>
                         </div>
                         <div className={style.countryHub}>
                             <div className={style.countryImageHolder}>
