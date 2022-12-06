@@ -1,7 +1,7 @@
-
 import style from "./style.module.css";
 import * as React from 'react';
-import RightPanel from './RightPanel'
+import RightPanel from './RightPanel';
+import {updateBet} from './DBUtil';
 
 function defaultScore(score){
     if (score === 0){
@@ -17,6 +17,7 @@ function handleClick(setMatches, matches, matchID){
     let newMatches = matches.map(item => 
         {
           if (item.matchID === matchID){
+            updateBet(item);
             return {...item, editMode: !item.editMode}; //gets everything that was already in item, and updates "done"
           }
           return item; // else return unmodified item 
