@@ -1,3 +1,5 @@
+import {matchesDB} from './debugDB';
+
 export function updateBet(match){
     console.log(match["matchID"]);
     const requestOptions = {
@@ -8,4 +10,20 @@ export function updateBet(match){
     fetch('http://127.0.0.1:5000/updateBet', requestOptions);
         // .then(response => response.json())
         // .then(data => this.setState({ postId: data.id }));
+}
+
+export function fetchMatches(setMatches){
+    // get my matches from my debugDB
+    setMatches(matchesDB);
+    
+    // // fetch information from my be server
+    // fetch('http://localhost:5000')
+    //   .then((response) => response.json())
+    //   .then((jsonGroups) => {
+    //     // console.log(jsonGroups);
+    //     setMatches(jsonGroups);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err.message);
+    //   });
 }

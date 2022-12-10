@@ -4,33 +4,22 @@ import MyNavBar from './MyNavBar';
 import { v4 as uuidv4 } from 'uuid';
 import {matchesDB} from './debugDB';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {fetchMatches} from './DBUtil';
+import Login from './Login';
+import Logout from './Logout';
 
 function App() {
   const [matches, setMatches] = useState([])
 
-  const fetchMatches = () => {
-    // get my matches from my debugDB
-    // setMatches(matchesDB);
-    
-    // fetch information from my be server
-    fetch('http://localhost:5000')
-      .then((response) => response.json())
-      .then((jsonGroups) => {
-        // console.log(jsonGroups);
-        setMatches(jsonGroups);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  };
-
   useEffect(() => {
-    fetchMatches();
+    fetchMatches(setMatches);
   }, []);
 
   return (
     <>
     <MyNavBar />
+    <Login />
+    <Logout />
     <Matches matches = { matches } setMatches = {setMatches}/>
     </>
   );
