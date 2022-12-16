@@ -4,10 +4,16 @@ import { GoogleLogout } from '@leecheuk/react-google-login';
 const clientId =
   '707788443358-u05p46nssla3l8tmn58tpo9r5sommgks.apps.googleusercontent.com';
 
-function Logout() {
+function Logout({matches, setMatches}) {
   const onSuccess = () => {
-    console.log('Logout made successfully');
+    console.log('Logout Success');
     alert('Logout made successfully ✌');
+    // setFruits((current) =>
+    // current.filter((fruit) => fruit.id !== 2)
+    // );
+    const newMatches= {...matches}
+    delete newMatches["Login"]
+    setMatches(newMatches)
   };
 
   return (

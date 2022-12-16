@@ -14,7 +14,7 @@ function defaultScore(score){
 }
 
 function handleClick(setMatches, matches, matchID){
-    let newMatches = matches.map(item => 
+    let newMatches = matches.DB.map(item => 
         {
           if (item.matchID === matchID){
             updateBet(item);
@@ -22,29 +22,32 @@ function handleClick(setMatches, matches, matchID){
           }
           return item; // else return unmodified item 
         });
-    setMatches(newMatches);
+    let result = {...matches, DB: newMatches}
+    setMatches(result);
 }
 
 function handleUpdateCountryA(e, setMatches, matches, matchID){
-    let newMatches = matches.map(item => 
+    let newMatches = matches.DB.map(item => 
         {
           if (item.matchID === matchID){
             return {...item, countryABet: e.target.value}; //gets everything that was already in item, and updates "done"
           }
           return item; // else return unmodified item 
         });
-    setMatches(newMatches);
+    let result = {...matches, DB: newMatches}
+    setMatches(result);
 }
 
 function handleUpdateCountryB(e, setMatches, matches, matchID){
-    let newMatches = matches.map(item => 
+    let newMatches = matches.DB.map(item => 
         {
           if (item.matchID === matchID){
             return {...item, countryBet: e.target.value}; //gets everything that was already in item, and updates "done"
           }
           return item; // else return unmodified item 
         });
-    setMatches(newMatches);
+    let result = {...matches, DB: newMatches}
+    setMatches(result);
 }
 
 function MatchEdit({match, setMatches, matches}) {

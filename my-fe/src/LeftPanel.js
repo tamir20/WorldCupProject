@@ -3,14 +3,16 @@ import style from "./style.module.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function handleClick(setMatches, matches, matchID){
-  let newMatches = matches.map(item => 
+  let newMatches = matches.DB.map(item => 
       {
         if (item.matchID === matchID){
           return {...item, editMode: !item.editMode}; //gets everything that was already in item, and updates "done"
         }
         return item; // else return unmodified item 
       });
-  setMatches(newMatches);
+  
+  let result = {...matches, DB: newMatches};
+  setMatches(result);
 }
 
 function LeftPanel({match, setMatches, matches}) {

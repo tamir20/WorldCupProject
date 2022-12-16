@@ -7,19 +7,27 @@ import { refreshTokenSetup } from './utils/refreshToken';
 const clientId =
   '226422324312-d72hqrdtmo7t0g5cocolr7uuhl20upj5.apps.googleusercontent.com';
 
-function Login() {
+function Login({matches, setMatches}) {
+  // console.log("login load: " + matches);
+  // console.log(matches);
   const onSuccess = (res) => {
     console.log('Login Success: currentUser:', res.profileObj);
     alert(
-      `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
+      `Logged in successfully welcome ${res.profileObj.name} 😍`
     );
     refreshTokenSetup(res);
+    // console.log("login message: " + matches);
+    // console.log(matches);
+    setMatches({
+      ...matches,
+      Login: res.profileObj.name
+    });
   };
 
   const onFailure = (res) => {
     console.log('Login failed: res:', res);
     alert(
-      `Failed to login. 😢 Please ping this to repo owner twitter.com/sivanesh_fiz`
+      ` Login failed 😢`
     );
   };
 
