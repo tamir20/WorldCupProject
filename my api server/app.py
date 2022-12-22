@@ -5,6 +5,8 @@ from flask_cors import CORS
 from pymongo import MongoClient
 from bson import json_util
 from flask import request
+from google.oauth2 import id_token
+from google.auth.transport import requests
 
 
 app = Flask(__name__)
@@ -18,6 +20,28 @@ def get_matches():
 @app.route("/updateBet", methods=['POST'])
 def update_Bet():
     return updateBet()
+
+@app.route("/validateToken", methods=['POST'])
+def validate_token():
+    return validateToken()
+
+def validateToken():
+    data = request.get_json()
+    token =  data["token"]
+    # Specify the CLIENT_ID of the app that accesses the backend:
+    try:
+        # Specify the CLIENT_ID of the app that accesses the backend:
+        idinfo = id_token.verify_oauth2_token(token, requests.Request())
+
+        # ID token is valid. Get the user's Google Account ID from the decoded token.
+        userid = idinfo['sub']
+        clientid = idinfo['aud']
+
+        return userid + " " + clientid
+    except ValueError:
+        # Invalid token
+        return "Invalid Token. token received: " + token
+
 
 def updateBet():
     data = request.get_json()

@@ -11,7 +11,12 @@ function Login({matches, setMatches}) {
   // console.log("login load: " + matches);
   // console.log(matches);
   const onSuccess = (res) => {
-    console.log('Login Success: currentUser:', res.profileObj);
+    console.log('Login Success');
+    console.log('googleId:', res.googleId);
+    console.log('tokenId:', res.tokenId);
+    console.log('accessToken:', res.accessToken);
+    console.log('tokenObj:', res.tokenObj);
+    console.log('profileObj:', res.profileObj);
     alert(
       `Logged in successfully welcome ${res.profileObj.name} 😍`
     );
