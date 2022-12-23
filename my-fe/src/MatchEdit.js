@@ -17,7 +17,7 @@ function handleClick(setMatches, matches, matchID){
     let newMatches = matches.DB.map(item => 
         {
           if (item.matchID === matchID){
-            updateBet(item);
+            updateBet(item, matches, setMatches);
             return {...item, editMode: !item.editMode}; //gets everything that was already in item, and updates "done"
           }
           return item; // else return unmodified item 

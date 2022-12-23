@@ -12,7 +12,7 @@ from google.auth.transport import requests
 app = Flask(__name__)
 CORS(app)
 
-@app.route("/")
+@app.route("/", methods=['POST'])
 def get_matches():
     # return json.dumps(dictionary)
    return get_myMatchesBets()
@@ -28,6 +28,7 @@ def validate_token():
 def validateToken():
     data = request.get_json()
     token =  data["token"]
+    # print(token)
     # Specify the CLIENT_ID of the app that accesses the backend:
     try:
         # Specify the CLIENT_ID of the app that accesses the backend:
@@ -37,20 +38,27 @@ def validateToken():
         userid = idinfo['sub']
         clientid = idinfo['aud']
 
-        return userid + " " + clientid
+        # print("Pass")
+        return userid
     except ValueError:
         # Invalid token
-        return "Invalid Token. token received: " + token
+        # print("Fail")
+        return "Invalid Token"
 
 
 def updateBet():
+    #Login validation with google's token
+    googleID = validateToken()
+    if googleID == "Invalid Token":
+        return "Invalid Token"
+    
     data = request.get_json()
     # mybet = myFind(collection="Bets", query={"matchID": data["matchID"]})[0]
     # mybet["countryABet"] = data["countryABet"]
     # mybet["countryBet"] = data["countryBet"]
     # myquery = { "address": "Valley 345" }
     # newvalues = { "$set": { "address": "Canyon 123" } }
-    return myUpdate("Bets" ,query={ "matchID": data["matchID"] },newValue={ "$set": { "countryABet": data["countryABet"], "countryBet": data["countryBet"]}})
+    return myUpdate("Bets" ,query={ "matchID": data["matchID"] , "googleID": googleID },newValue={ "$set": { "countryABet": data["countryABet"], "countryBet": data["countryBet"]}})
 
 def get_collection(collectionName):
    # Provide the mongodb atlas url to connect python to mongodb using pymongo
@@ -77,11 +85,16 @@ def myUpdate(collection,query,newValue):
     return myFind(collection,query)
 
 def get_myMatchesBets():
+    #Login validation with google's token
+    googleID = validateToken()
+    if googleID == "Invalid Token":
+        return "Invalid Token"
+
     matches = myFind(collection="Matches", query="")
 
     # get player bets for each match
     for match in matches:
-        mybets = myFind(collection="Bets", query={"matchID": match["matchID"]})[0]
+        mybets = myFind(collection="Bets", query={"matchID": match["matchID"], "googleID": googleID})[0]
         match["countryABet"] = mybets["countryABet"]
         match["countryBet"] = mybets["countryBet"]      
   
@@ -97,7 +110,7 @@ def get_myMatchesBets():
 
     # get player points for each match
     for match in matches:
-        mybets = myFind(collection="Bets", query={"matchID": match["matchID"]})[0]
+        mybets = myFind(collection="Bets", query={"matchID": match["matchID"], "googleID": googleID})[0]
         countryAScore = match["countryAScore"]
         countryBScore = match["countryBScore"]
         countryABet = mybets["countryABet"]

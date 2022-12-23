@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Login from './Login';
 import Logout from './Logout';
+import Refresh from './Refresh';
 
 
 
@@ -17,6 +18,7 @@ function MyNavBar({matches, setMatches}) {
       </Navbar.Brand>
       
     </Container>
+    <div className="p-2"><Refresh matches = { matches } setMatches = {setMatches}/></div>
     <div className="p-2"><Login matches = { matches } setMatches = {setMatches}/></div>
     <div className="p-2"><Logout matches = { matches } setMatches = {setMatches}/></div>
   </Navbar>

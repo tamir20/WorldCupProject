@@ -9,9 +9,9 @@ import {fetchMatches} from './DBUtil';
 function App() {
   const [matches, setMatches] = useState([])
 
-  useEffect(() => {
-    fetchMatches(setMatches);
-  }, []);
+  // useEffect(() => {
+  //   fetchMatches(matches, setMatches);
+  // }, []);
 
   if (matches.DB){
     // console.log(matches);
@@ -22,8 +22,24 @@ function App() {
       </>
     );
   }else{
-    return(<MyNavBar/>);
+    return (
+      <>
+      <MyNavBar matches = { matches } setMatches = {setMatches}/>
+      </>
+    );
   }
+
+  // if (matches.DB){
+  //   // console.log(matches);
+  //   return (
+  //     <>
+  //     <MyNavBar matches = { matches } setMatches = {setMatches}/>
+  //     <Matches matches = { matches } setMatches = {setMatches}/>
+  //     </>
+  //   );
+  // }else{
+  //   return(<MyNavBar/>);
+  // }
 
 }
 

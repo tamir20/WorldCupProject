@@ -6,13 +6,14 @@ const clientId =
 
 function Logout({matches, setMatches}) {
   const onSuccess = () => {
-    console.log('Logout Success');
+    // console.log('Logout Success');
     alert('Logout made successfully ✌');
     // setFruits((current) =>
     // current.filter((fruit) => fruit.id !== 2)
     // );
     const newMatches= {...matches}
     delete newMatches["Login"]
+    delete newMatches["DB"]
     setMatches(newMatches)
   };
 
