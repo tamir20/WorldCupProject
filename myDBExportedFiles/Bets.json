@@ -3,20 +3,47 @@
     "$oid": "6383b28e052def533a7f9a0d"
   },
   "matchID": 1,
-  "countryABet": 1,
-  "countryBet": 0
+  "countryABet": 5,
+  "countryBet": 1,
+  "googleID": "113842826766003571690"
 },{
   "_id": {
     "$oid": "6383b28e052def533a7f9a0e"
   },
   "matchID": 2,
-  "countryABet": 3,
-  "countryBet": 3
+  "countryABet": 8,
+  "countryBet": 2,
+  "googleID": "113842826766003571690"
 },{
   "_id": {
     "$oid": "6383b28e052def533a7f9a0f"
   },
   "matchID": 3,
   "countryABet": 4,
-  "countryBet": 2
+  "countryBet": 2,
+  "googleID": "113842826766003571690"
+},{
+  "_id": {
+    "$oid": "63a58a062711185a3bd79a68"
+  },
+  "matchID": 1,
+  "countryABet": 5,
+  "countryBet": 2,
+  "googleID": "109602596286906993533"
+},{
+  "_id": {
+    "$oid": "63a58a222711185a3bd79a69"
+  },
+  "matchID": 2,
+  "countryABet": 2,
+  "countryBet": 2,
+  "googleID": "109602596286906993533"
+},{
+  "_id": {
+    "$oid": "63a58e8b2711185a3bd79a6b"
+  },
+  "matchID": 3,
+  "countryABet": 4,
+  "countryBet": 2,
+  "googleID": "109602596286906993533"
 }]
